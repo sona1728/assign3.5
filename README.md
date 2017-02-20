@@ -1,5 +1,5 @@
 1.)
-#HDP 2.0 NAMENODE HIGH AVAILABILITY: FEATURE OVERVIEW
+#NAMENODE HIGH AVAILABILITY: FEATURE OVERVIEW
 
 - AUTOMATED FAILOVER: HDP pro-actively detects NameNode host and process failures and will automatically switch to the standby NameNode to maintain availability for the HDFS service. There is no need for human intervention in the process – System Administrators can sleep in peace!
 
@@ -31,7 +31,7 @@
 
 - HDFS metadata can be thought of consisting of two parts: the base filesystem table (stored in a file called fsimage) and the edit log which lists changes made to the base table (stored in a file called edits). Checkpointing is a process of reconciling fsimage with edits to produce a new version of fsimage. There are two benefits arising out of this: a more recent version of fsimage, and a truncated edit log.
 
-*USAGE OF CHECK POINTING:
+#USAGE OF CHECK POINTING:
 
 - fs.checkpoint.period controls how often this reconciliation will be triggered.  3600 means that every hour fsimage will be updated and edit log truncated. Checkpiont is not cheap, so there is a balance between running it too often and letting the edit log grow too large. This parameter should be set to get a good balance assuming typical filesystem use in your cluster.
 
@@ -51,7 +51,7 @@
 
 - A Namespace and its block pool together are called Namespace Volume. It is a self-contained unit of management. When a namenode/namespace is deleted, the corresponding block pool at the datanodes is deleted. Each namespace volume is upgraded as a unit, during cluster upgrade.
 
-*BENEFITS:
+#BENEFITS:
 1. Generic storage service.
 2. Design simplicity.
 
